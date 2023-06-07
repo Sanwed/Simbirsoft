@@ -3,12 +3,21 @@ const taskTemplate = document.querySelector('#task')
   .content
   .querySelector('.task');
 
-const renderTask = (title, text) => {
+const createTask = (title, text) => {
   const task = taskTemplate.cloneNode(true);
   task.querySelector('.task__title').textContent = title;
   task.querySelector('.task__text').textContent = text;
   tasksParent.append(task);
 };
+
+const renderTasks = (tasks) => {
+  tasks.forEach((task) => {
+    const taskElement = taskTemplate.cloneNode(true);
+    taskElement.querySelector('.task__title').textContent = task.title;
+    taskElement.querySelector('.task__text').textContent = task.description;
+    tasksParent.append(taskElement);
+  });
+}
 
 const clearValues = (element) => {
   const inputs = element.querySelectorAll('input');
@@ -59,7 +68,7 @@ const editTaskHandler = (task) => {
     task.querySelector('.task__text').textContent = text;
     
     closeModal('edit-task-modal');
-  })
+  }, {once: true});
 }
 
 const addTaskButtonsHandlers = () => {
@@ -80,7 +89,7 @@ const addTaskButtonsHandlers = () => {
     
     if (evt.target.classList.contains('edit-button')) {
       openModal('edit-task-modal');
-      
+      console.log(task);
       const title = document.querySelector('#edit-task-title');
       const text = document.querySelector('#edit-task-text');
       title.value = task.querySelector('.task__title').textContent;
@@ -111,7 +120,7 @@ addTaskForm.addEventListener('submit', (evt) => {
   const title = addTaskForm.querySelector('#add-task-title').value;
   const text = addTaskForm.querySelector('#add-task-text').value;
   
-  renderTask(title, text);
+  createTask(title, text);
   countTasks();
   closeModal('add-task-modal');
 });
@@ -119,7 +128,8 @@ addTaskForm.addEventListener('submit', (evt) => {
 /**
  * Добавляет возможность добавления и удаления задач
  */
-const tasks = () => {
+const tasks = (tasks) => {
+  renderTasks(tasks);
   countTasks();
   addTaskButtonsHandlers();
   addCloseButtonHandler('add-task-modal');
