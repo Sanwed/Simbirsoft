@@ -65,17 +65,17 @@ body {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #9D1082;
+  background-color: #ad3696;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 25px 25px;
 }
 
-#tasks::before {
+#tasks-button::before {
   background-image: url('../img/taks-icon.svg');
 }
 
-#weather::before {
+#weather-button::before {
   background-image: url("../img/weather-icon.svg");
 }
 
@@ -104,7 +104,7 @@ body {
 
 #add-task {
   position: relative;
-  padding: 5px 5px 5px 35px;
+  padding: 5px 10px 5px 35px;
   border: none;
   border-radius: 20px;
   font-size: 18px;
@@ -124,7 +124,7 @@ body {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color: #9D1082;
+  background-color: #ad3696;
 }
 
 .tasks__wrapper {
@@ -134,31 +134,42 @@ body {
   flex-wrap: wrap;
 }
 
+.tasks__message {
+  font-size: 22px;
+}
+
 /* Task */
 
 .task {
+  position: relative;
+  display: flex;
+  flex-direction: column;
   border-radius: 20px;
-  max-width: 170px;
+  height: 200px;
+  width: 170px;
   box-sizing: border-box;
-  background-color: #661692;
+  background-color: #9832b4;
   padding-top: 10px;
-  border-right: 2px solid #661692;
-  border-left: 2px solid #661692;
+  border-right: 2px solid #9832b4;
+  border-left: 2px solid #9832b4;
+  transition: transform 0.2s linear;
 }
 
 .task__title {
-  margin: 0 0 5px;
+  margin: 0 25px 5px;
   color: #FFE8FB;
+  word-break: break-word;
   font-size: 18px;
   text-align: center;
   font-weight: 400;
 }
 
+
 .task__content {
   background-color: #FFE8FB;
   padding: 10px;
   border-radius: 5px;
-  height: 130px;
+  flex-grow: 1;
   scrollbar-width: none;
   overflow-y: scroll;
   box-sizing: border-box;
@@ -171,12 +182,13 @@ body {
 
 .task__content p {
   margin: 0;
+  word-break: break-word;
 }
 
 .task-ready {
   border-radius: 0 0 20px 20px;
   width: 100%;
-  margin: 0;
+  margin: auto 0 0;
   padding: 5px 0;
   border: none;
   font-size: 18px;
@@ -184,3 +196,166 @@ body {
   color: #FFE8FB;
   cursor: pointer;
 }
+
+.edit-button {
+  position: absolute;
+  top: 12px;
+  left: 10px;
+  width: 15px;
+  height: 15px;
+  border: none;
+  background: transparent url("../img/edit-icon.svg") center / contain;
+  cursor: pointer;
+}
+
+
+/* Модальные окна */
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__content {
+  max-width: 500px;
+  padding: 30px;
+  position: relative;
+  background-color: #fff;
+  border-radius: 20px;
+}
+
+.modal__title {
+  margin: 0 40px 20px 0;
+}
+
+.close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #ddd;
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 0 20px 0 20px;
+  cursor: pointer;
+}
+
+.close-button::after,
+.close-button::before {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  top: 50%;
+  left: 10px;
+  background-color: #000;
+  transform: rotate(45deg);
+}
+
+.close-button::before {
+  transform: rotate(-45deg);
+}
+
+.close-button:hover,
+.close-button:focus {
+  background-color: #cdcdcd;
+}
+
+.close-button:active {
+  background-color: #bbb;
+}
+
+.form__label {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.form__text {
+  display: block;
+  padding-left: 15px;
+  color: #666;
+}
+
+.form__input,
+.form__textarea {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #eee;
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 18px;
+}
+
+.form__input::placeholder,
+.form__textarea::placeholder {
+  color: #bbb;
+}
+
+.form__input:hover,
+.form__textarea:hover {
+  background-color: #dedede;
+}
+
+.form__input:focus,
+.form__textarea:focus {
+  background-color: #dedede;
+  outline: none;
+}
+
+.form__textarea {
+  resize: none;
+}
+
+.form__button {
+  width: max-content;
+  margin: 0 auto;
+  display: block;
+  padding: 15px;
+  cursor: pointer;
+  font-size: 18px;
+  border: none;
+  background-color: #ddd;
+  border-radius: 10px;
+}
+
+.form__button:hover,
+.form__button:focus {
+  background-color: #cdcdcd;
+}
+
+.form__button:active {
+  background-color: #bbb;
+}
+
+.removing {
+  transform: scale(0);
+}
+
+.hidden {
+  display: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
