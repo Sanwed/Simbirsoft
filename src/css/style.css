@@ -55,6 +55,7 @@ body {
   font-size: 20px;
   line-height: 1;
   cursor: pointer;
+  transition: background-color 0.1s linear;
 }
 
 .sidebar__item::before {
@@ -64,8 +65,8 @@ body {
   left: 0;
   width: 40px;
   height: 40px;
-  border-radius: 50%;
-  background-color: #ad3696;
+  border-radius: 50% 0 0 50%;
+  background-color: #ee57d0;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 25px 25px;
@@ -79,11 +80,20 @@ body {
   background-image: url("../img/weather-icon.svg");
 }
 
+#calendar-button::before {
+  background-image: url("../img/calendar-icon.svg");
+}
+
 /* Main Screen */
 .main-screen {
   width: 100%;
   background-color: #CA95FF;
   min-height: 100vh;
+  display: flex;
+}
+
+.screen {
+  flex-basis: 100%;
 }
 
 /* Tasks Screen */
@@ -106,6 +116,7 @@ body {
   position: relative;
   padding: 5px 10px 5px 35px;
   border: none;
+  height: 30px;
   border-radius: 20px;
   font-size: 18px;
   cursor: pointer;
@@ -113,8 +124,8 @@ body {
 
 #add-task::before {
   content: '+';
-  color: #333;
-  font-size: 40px;
+  color: #FFE8FB;
+  font-size: 35px;
   position: absolute;
   display: flex;
   align-items: center;
@@ -123,8 +134,8 @@ body {
   left: 0;
   width: 30px;
   height: 30px;
-  border-radius: 50%;
-  background-color: #ad3696;
+  border-radius: 50% 0 0 50%;
+  background-color: #9832b4;
 }
 
 .tasks__wrapper {
@@ -339,6 +350,10 @@ body {
 
 .removing {
   transform: scale(0);
+}
+
+.screen-button-active {
+  background-color: #ee57d0;
 }
 
 .hidden {
