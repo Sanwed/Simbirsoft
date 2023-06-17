@@ -7,6 +7,10 @@ const calendar = document.querySelector('.calendar');
 const mainScreen = document.querySelector('.main-screen');
 
 calendar.onmousedown = function (e) {
+  if (e.target.closest('.calendar__wrapper')) {
+    return;
+  }
+  
   function getCoords(elem) {
     const box = elem.getBoundingClientRect();
     
@@ -57,9 +61,6 @@ const months = [
   'Декабрь',
 ];
 const monthPicker = document.querySelector('#month-picker');
-const dayTextFormat = document.querySelector('.day-text-format');
-const timeFormat = document.querySelector('.time-format');
-const dateFormat = document.querySelector('.date-format');
 const generateCalendar = (month, year) => {
   const calendarDays = document.querySelector('.calendar__days');
   calendarDays.innerHTML = '';
@@ -110,12 +111,6 @@ months.forEach((e, index) => {
   month.addEventListener('click', () => {
     currentMonth.value = index;
     generateCalendar(currentMonth.value, currentYear.value);
-    dayTextFormat.classList.remove('hideTime');
-    dayTextFormat.classList.add('showtime');
-    timeFormat.classList.remove('hideTime');
-    timeFormat.classList.add('showtime');
-    dateFormat.classList.remove('hideTime');
-    dateFormat.classList.add('showtime');
   });
 });
 

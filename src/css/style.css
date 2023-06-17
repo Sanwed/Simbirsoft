@@ -406,13 +406,7 @@ body {
   grid-template-columns: repeat(7, 1fr);
   font-weight: 600;
   cursor: pointer;
-  color: rgb(104, 104, 104);
-}
-
-.calendar__week-days div:hover {
-  color: black;
-  transform: scale(1.2);
-  transition: all .2s ease-in-out;
+  color: #686868;
 }
 
 .calendar__week-days div {
@@ -442,10 +436,6 @@ body {
   padding: 5px 10px;
   border-radius: 10px;
   cursor: pointer;
-}
-
-.month-picker:hover {
-  color: var(--color-txt);
 }
 
 .year-picker {
