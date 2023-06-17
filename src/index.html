@@ -15,9 +15,23 @@
       <p class="sidebar__welcome">Добрый день, <br> <span id="user-name">Александр</span></p>
       <ul class="sidebar__list">
         <li class="sidebar__item" id="tasks-button">Задачи</li>
-        <li class="sidebar__item" id="weather-button">Погода</li>
         <li class="sidebar__item" id="calendar-button">Календарь</li>
       </ul>
+    </div>
+    <div class="date-time-format">
+      <div class="date-time-value">
+        <div class="time-format"></div>
+        <div class="date-format"></div>
+      </div>
+      <div class="weather">
+        <div>
+          <img src="img/weather-icon.png" alt="" width="50" height="50">
+        </div>
+        <div class="weather__data">
+          <span id="temperature"></span>
+          <span id="humidity"></span>
+        </div>
+      </div>
     </div>
   </div>
   
@@ -31,9 +45,34 @@
         <!-- Здесь будут задачи -->
       </div>
     </div>
-    <div id="calendar-screen" class="screen hidden">Здесь будет календарь</div>
     
-    <div id="weather-screen" class="screen hidden">Здесь будет погода</div>
+    
+    <div class="calendar hidden" id="calendar-screen" draggable="true">
+      <header class="calendar__header">
+        <span class="month-picker" id="month-picker"></span>
+        <div class="year-picker" id="year-picker">
+          <span class="year-change" id="pre-year"><</span>
+          <span id="year"></span>
+          <span class="year-change" id="next-year">></span>
+        </div>
+      </header>
+      
+      <div class="calendar__body">
+        <div class="calendar__week-days">
+          <div>Пн</div>
+          <div>Вт</div>
+          <div>Ср</div>
+          <div>Чт</div>
+          <div>Пт</div>
+          <div>Сб</div>
+          <div>Вс</div>
+        </div>
+        
+        <div class="calendar__days">
+        </div>
+      </div>
+      <div class="month-list"></div>
+    </div>
   </div>
 </div>
 

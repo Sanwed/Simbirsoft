@@ -10,9 +10,7 @@ const bindScreenButton = (buttonId, screenId) => {
 
 const screens = () => {
     bindScreenButton('tasks-button', 'tasks-screen');
-    bindScreenButton('weather-button', 'weather-screen');
     bindScreenButton('calendar-button', 'calendar-screen');
 }
-
 
 export {screens};
