@@ -34,17 +34,17 @@ calendar.onmousedown = function (e) {
   
   document.onmousemove = function (e) {
     moveAt(e);
-  }
+  };
   
   calendar.onmouseup = function () {
     document.onmousemove = null;
     calendar.onmouseup = null;
-  }
+  };
   
   calendar.ondragstart = function () {
     return false;
   };
-}
+};
 
 const months = [
   'Январь',
@@ -58,7 +58,7 @@ const months = [
   'Сентябрь',
   'Октябрь',
   'Ноябрь',
-  'Декабрь',
+  'Декабрь'
 ];
 const monthPicker = document.querySelector('#month-picker');
 const generateCalendar = (month, year) => {
@@ -77,7 +77,7 @@ const generateCalendar = (month, year) => {
     30,
     31,
     30,
-    31,
+    31
   ];
   
   let currentDate = new Date();
@@ -140,7 +140,7 @@ const showCurrentDateOption = {
   year: 'numeric',
   month: 'long',
   day: 'numeric',
-  weekday: 'long',
+  weekday: 'long'
 };
 const currentDateFormat = new Intl.DateTimeFormat('ru', showCurrentDateOption).format(currentShowDate);
 todayShowDate.textContent = currentDateFormat;
@@ -150,7 +150,7 @@ setInterval(() => {
   const option = {
     hour: 'numeric',
     minute: 'numeric',
-    second: 'numeric',
+    second: 'numeric'
   };
   todayShowTime.textContent = new Intl.DateTimeFormat('ru', option).format(timer);
 }, 0);

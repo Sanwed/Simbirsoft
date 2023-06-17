@@ -17,7 +17,7 @@ const renderTasks = (tasks) => {
     taskElement.querySelector('.task__text').textContent = task.description;
     tasksParent.append(taskElement);
   });
-}
+};
 
 const clearValues = (element) => {
   const inputs = element.querySelectorAll('input');
@@ -35,20 +35,20 @@ const countTasks = () => {
   } else {
     taskMessage.textContent = 'В данный момент у вас нет задач';
   }
-}
+};
 
 const closeModal = (modalSelector) => {
-  const modal = document.querySelector(`#${modalSelector}`)
+  const modal = document.querySelector(`#${modalSelector}`);
   modal.classList.add('hidden');
   document.removeEventListener('keydown', onEscapeButtonClick);
-}
+};
 
 const openModal = (modalSelector) => {
-  const modal = document.querySelector(`#${modalSelector}`)
+  const modal = document.querySelector(`#${modalSelector}`);
   modal.classList.remove('hidden');
   document.addEventListener('keydown', onEscapeButtonClick);
   clearValues(modal);
-}
+};
 
 function onEscapeButtonClick(evt) {
   if (evt.key === 'Escape') {
@@ -69,7 +69,7 @@ const editTaskHandler = (task) => {
     
     closeModal('edit-task-modal');
   }, {once: true});
-}
+};
 
 const addTaskButtonsHandlers = () => {
   tasksParent.addEventListener('click', (evt) => {
@@ -105,7 +105,7 @@ const addCloseButtonHandler = (modalSelector) => {
   const closeButton = modal.querySelector('.close-button');
   closeButton.addEventListener('click', () => {
     closeModal(modalSelector);
-  })
+  });
 };
 
 const addButton = document.querySelector('#add-task');
@@ -134,6 +134,6 @@ const tasks = (tasks) => {
   addTaskButtonsHandlers();
   addCloseButtonHandler('add-task-modal');
   addCloseButtonHandler('edit-task-modal');
-}
+};
 
 export {tasks};

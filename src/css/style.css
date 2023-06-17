@@ -1,7 +1,7 @@
 /* Global Styles */
 :root {
   --sidebar-background: #661692;
-  --white: #F4EAFF;
+  --white: #f4eaff;
   --text-color-main: #333;
   --button-color: #ee57d0;
   --task-color: #9832b4;
@@ -13,10 +13,10 @@
 }
 
 body {
-  margin: 0;
   font-family: Inter, Arial, sans-serif;
   font-size: 18px;
   line-height: 1.2;
+  margin: 0;
   background-color: #ddd;
 }
 
@@ -35,17 +35,17 @@ body {
 }
 
 .sidebar__header {
-  background-color: var(--white);
-  min-height: 70px;
-  box-sizing: border-box;
-  padding: 10px;
   display: flex;
   align-items: center;
+  box-sizing: border-box;
+  min-height: 70px;
+  padding: 10px;
+  background-color: var(--white);
 }
 
 .sidebar__content {
-  padding: 30px;
   flex-grow: 1;
+  padding: 30px;
 }
 
 .sidebar__welcome {
@@ -62,27 +62,27 @@ body {
 }
 
 .sidebar__item {
-  position: relative;
-  margin-bottom: 60px;
-  width: 100%;
-  box-sizing: border-box;
-  background-color: var(--white);
-  border-radius: 20px;
-  padding: 10px 20px 10px 50px;
   font-size: 20px;
-  color: var(--text-color-main);
   line-height: 1;
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 60px;
+  padding: 10px 20px 10px 50px;
   cursor: pointer;
   transition: background-color 0.1s linear;
+  color: var(--text-color-main);
+  border-radius: 20px;
+  background-color: var(--white);
 }
 
 .sidebar__item::before {
-  content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 40px;
   height: 40px;
+  content: '';
   border-radius: 50% 0 0 50%;
   background-color: var(--button-color);
   background-repeat: no-repeat;
@@ -104,10 +104,10 @@ body {
 
 /* Main Screen */
 .main-screen {
-  width: 100%;
-  background: var(--screen-color);
-  min-height: 100vh;
   display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background: var(--screen-color);
 }
 
 .screen {
@@ -126,46 +126,46 @@ body {
 
 .tasks__header {
   display: flex;
-  min-height: 70px;
-  box-sizing: border-box;
   align-items: center;
   justify-content: space-between;
+  box-sizing: border-box;
+  min-height: 70px;
   padding: 20px;
-  gap: 50px;
   border-bottom: 1px solid var(--white);
+  gap: 50px;
 }
 
 #add-task {
-  position: relative;
-  padding: 5px 10px 5px 35px;
-  border: none;
-  height: 30px;
-  border-radius: 20px;
   font-size: 18px;
+  position: relative;
+  height: 30px;
+  padding: 5px 10px 5px 35px;
   cursor: pointer;
+  border: none;
+  border-radius: 20px;
 }
 
 #add-task::before {
-  content: '+';
-  color: var(--white);
   font-size: 35px;
   position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  top: 0;
-  left: 0;
   width: 30px;
   height: 30px;
+  content: '+';
+  color: var(--white);
   border-radius: 50% 0 0 50%;
   background-color: var(--task-color);
 }
 
 .tasks__wrapper {
-  padding: 20px;
   display: flex;
-  gap: 50px;
   flex-wrap: wrap;
+  padding: 20px;
+  gap: 50px;
 }
 
 .tasks__message {
@@ -178,36 +178,35 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  border-radius: 20px;
-  height: 200px;
-  width: 170px;
   box-sizing: border-box;
-  background-color: var(--task-color);
+  width: 170px;
+  height: 200px;
   padding-top: 10px;
+  transition: transform 0.2s linear;
   border-right: 2px solid var(--task-color);
   border-left: 2px solid var(--task-color);
-  transition: transform 0.2s linear;
+  border-radius: 20px;
+  background-color: var(--task-color);
 }
 
 .task__title {
-  margin: 0 25px 5px;
-  color: var(--white);
-  word-break: break-word;
   font-size: 18px;
-  text-align: center;
   font-weight: 400;
+  margin: 0 25px 5px;
+  text-align: center;
+  word-break: break-word;
+  color: var(--white);
 }
 
-
 .task__content {
-  background-color: var(--white);
-  padding: 10px;
-  border-radius: 5px;
-  flex-grow: 1;
-  color: var(--text-color-main);
-  scrollbar-width: none;
   overflow-y: scroll;
+  flex-grow: 1;
   box-sizing: border-box;
+  padding: 10px;
+  color: var(--text-color-main);
+  border-radius: 5px;
+  background-color: var(--white);
+  scrollbar-width: none;
 }
 
 .task__content::-webkit-scrollbar {
@@ -221,15 +220,15 @@ body {
 }
 
 .task-ready {
-  border-radius: 0 0 20px 20px;
+  font-size: 18px;
   width: 100%;
   margin: auto 0 0;
   padding: 5px 0;
-  border: none;
-  font-size: 18px;
-  background-color: transparent;
-  color: var(--white);
   cursor: pointer;
+  color: var(--white);
+  border: none;
+  border-radius: 0 0 20px 20px;
+  background-color: transparent;
 }
 
 .edit-button {
@@ -238,11 +237,10 @@ body {
   left: 10px;
   width: 15px;
   height: 15px;
+  cursor: pointer;
   border: none;
   background: transparent url("../img/edit-icon.svg") center / contain;
-  cursor: pointer;
 }
-
 
 /* Модальные окна */
 
@@ -250,20 +248,20 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.3);
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .modal__content {
+  position: relative;
   max-width: 500px;
   padding: 30px;
-  position: relative;
-  background-color: var(--white);
   border-radius: 20px;
+  background-color: var(--white);
 }
 
 .modal__title {
@@ -274,26 +272,26 @@ body {
   position: absolute;
   top: 0;
   right: 0;
-  background-color: #ddd;
-  border: none;
-  margin: 0;
-  padding: 0;
   width: 50px;
   height: 50px;
-  border-radius: 0 20px 0 20px;
+  margin: 0;
+  padding: 0;
   cursor: pointer;
+  border: none;
+  border-radius: 0 20px 0 20px;
+  background-color: #ddd;
 }
 
 .close-button::after,
 .close-button::before {
-  content: '';
   position: absolute;
-  width: 30px;
-  height: 2px;
   top: 50%;
   left: 10px;
-  background-color: #000;
+  width: 30px;
+  height: 2px;
+  content: '';
   transform: rotate(45deg);
+  background-color: #000;
 }
 
 .close-button::before {
@@ -322,13 +320,13 @@ body {
 
 .form__input,
 .form__textarea {
-  width: 100%;
+  font-size: 18px;
   box-sizing: border-box;
-  background-color: #eee;
+  width: 100%;
+  padding: 15px;
   border: none;
   border-radius: 10px;
-  padding: 15px;
-  font-size: 18px;
+  background-color: #eee;
 }
 
 .form__input::placeholder,
@@ -343,8 +341,8 @@ body {
 
 .form__input:focus,
 .form__textarea:focus {
-  background-color: #ddd;
   outline: none;
+  background-color: #ddd;
 }
 
 .form__textarea {
@@ -352,15 +350,15 @@ body {
 }
 
 .form__button {
+  font-size: 18px;
+  display: block;
   width: max-content;
   margin: 0 auto;
-  display: block;
   padding: 15px;
   cursor: pointer;
-  font-size: 18px;
   border: none;
-  background-color: #ddd;
   border-radius: 10px;
+  background-color: #ddd;
 }
 
 .form__button:hover,
@@ -375,26 +373,26 @@ body {
 /* Календарь */
 .calendar {
   position: absolute;
+  z-index: 2;
   top: 30%;
   left: 50%;
-  z-index: 2;
-  height: 610px;
-  width: max-content;
-  background-color: var(--white);
-  border-radius: 25px;
   overflow: hidden;
+  width: max-content;
+  height: 610px;
   padding: 30px 50px;
+  border-radius: 25px;
+  background-color: var(--white);
   box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
 }
 
 .calendar__header {
-  background-color: #9796f0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   font-weight: 700;
-  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 10px;
+  color: var(--white);
+  background-color: #9796f0;
 }
 
 .calendar__body {
@@ -402,17 +400,17 @@ body {
 }
 
 .calendar__week-days {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
   font-weight: 600;
+  display: grid;
   cursor: pointer;
   color: #686868;
+  grid-template-columns: repeat(7, 1fr);
 }
 
 .calendar__week-days div {
   display: grid;
-  place-items: center;
   height: 50px;
+  place-items: center;
 }
 
 .calendar__days {
@@ -422,20 +420,20 @@ body {
 }
 
 .calendar__days div {
-  width: 37px;
-  height: 33px;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 37px;
+  height: 33px;
   padding: 5px;
-  position: relative;
   cursor: pointer;
 }
 
 .month-picker {
   padding: 5px 10px;
-  border-radius: 10px;
   cursor: pointer;
+  border-radius: 10px;
 }
 
 .year-picker {
@@ -444,25 +442,25 @@ body {
 }
 
 .year-change {
-  height: 30px;
-  width: 30px;
-  border-radius: 50%;
   display: grid;
-  place-items: center;
+  width: 30px;
+  height: 30px;
   margin: 0 10px;
   cursor: pointer;
+  border-radius: 50%;
+  place-items: center;
 }
 
 .year-change:hover {
-  background-color: var(--light-btn);
   transition: all 0.2s ease-in-out;
   transform: scale(1.12);
+  background-color: var(--light-btn);
 }
 
 #year:hover {
   cursor: pointer;
-  transform: scale(1.2);
   transition: all 0.2s ease-in-out;
+  transform: scale(1.2);
 }
 
 .calendar__days div span {
@@ -471,82 +469,55 @@ body {
 
 .calendar__days div:hover {
   transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
-  background-color: #fbc7d4;
-  border-radius: 20%;
   color: var(--dark-text);
+  border-radius: 20%;
+  background-color: #fbc7d4;
 }
 
 .calendar__days div.current-date {
   color: var(--white);
-  background-color: var(--light-btn);
   border-radius: 20%;
+  background-color: var(--light-btn);
 }
 
 .month-list {
   position: absolute;
   bottom: 30px;
-  background-color: var(--light-btn);
-  color: var(--white);
   display: grid;
+  color: var(--white);
+  border-radius: 20px;
+  background-color: var(--light-btn);
   grid-template-columns: repeat(3, auto);
   gap: 5px;
-  border-radius: 20px;
 }
 
 .month-list > div {
-  text-align: center;
   margin: 5px 10px;
   padding: 10px;
-  transition: all 0.2s ease-in-out;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-align: center;
   border-radius: 15px;
 }
 
 .month-list > div:hover {
-  background-color: #7776e7;
-  transform: scale(0.9);
   transition: all 0.2s ease-in-out;
+  transform: scale(0.9);
+  background-color: #7776e7;
 }
 
 .date-time-format {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   padding: 10px 30px;
   color: var(--white);
   background-color: #9627d5;
 }
 
-.date-time-value {
-}
-
 .time-format {
   font-size: 1.5rem;
   margin-bottom: 5px;
-}
-
-.time-format.hidetime {
-  animation: hidetime 1.5s forwards;
-}
-
-.day-text-format.hidetime {
-  animation: hidetime 1.5s forwards;
-}
-
-.date-format.hidetime {
-  animation: hidetime 1.5s forwards;
-}
-
-.day-text-format.showtime {
-  animation: showtime 1s forwards;
-}
-
-.time-format.showtime {
-  animation: showtime 1s forwards;
-}
-
-.date-format.showtime {
-  animation: showtime 1s forwards;
 }
 
 .weather {
@@ -556,64 +527,9 @@ body {
 }
 
 .weather__data span {
+  font-size: 16px;
   display: block;
   margin-bottom: 5px;
-  font-size: 16px;
-}
-
-@keyframes to-top {
-  0% {
-    transform: translateY(0);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(100%);
-    opacity: 1;
-  }
-}
-
-@keyframes to-left {
-  0% {
-    transform: translatex(230%);
-    opacity: 1;
-  }
-  100% {
-    transform: translatex(0);
-    opacity: 1;
-  }
-}
-
-@keyframes to-right {
-  10% {
-    transform: translatex(0);
-    opacity: 1;
-  }
-  100% {
-    transform: translatex(-150%);
-    opacity: 1;
-  }
-}
-
-@keyframes showtime {
-  0% {
-    transform: translatex(250%);
-    opacity: 1;
-  }
-  100% {
-    transform: translatex(0%);
-    opacity: 1;
-  }
-}
-
-@keyframes hidetime {
-  0% {
-    transform: translatex(0%);
-    opacity: 1;
-  }
-  100% {
-    transform: translatex(-370%);
-    opacity: 1;
-  }
 }
 
 .removing {
@@ -630,15 +546,14 @@ body {
 
 .visually-hidden {
   position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
   width: 1px;
   height: 1px;
   margin: -1px;
-  border: 0;
   padding: 0;
-  
   white-space: nowrap;
+  border: 0;
   clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
 }
 

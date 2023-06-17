@@ -34,9 +34,9 @@
       </div>
     </div>
   </div>
-  
+
   <div class="main-screen">
-    <div id="tasks-screen" class="screen hidden">
+    <div class="screen hidden" id="tasks-screen">
       <header class="tasks__header">
         <button id="add-task" type="button">Добавить&nbsp;задачу</button>
         <span class="tasks__message">В данный момент у вас нет задач</span>
@@ -45,8 +45,7 @@
         <!-- Здесь будут задачи -->
       </div>
     </div>
-    
-    
+
     <div class="calendar hidden" id="calendar-screen" draggable="true">
       <div class="calendar__wrapper">
         <header class="calendar__header">
@@ -57,7 +56,7 @@
             <span class="year-change" id="next-year">></span>
           </div>
         </header>
-        
+
         <div class="calendar__body">
           <div class="calendar__week-days">
             <div>Пн</div>
@@ -68,7 +67,7 @@
             <div>Сб</div>
             <div>Вс</div>
           </div>
-          
+
           <div class="calendar__days">
           </div>
         </div>
@@ -78,14 +77,14 @@
   </div>
 </div>
 
-<div id="add-task-modal" class="modal hidden">
+<div class="modal hidden" id="add-task-modal">
   <div class="modal__content">
-    <button type="button" class="close-button">
+    <button class="close-button" type="button">
       <span class="visually-hidden">Закрыть</span>
     </button>
     <h2 class="modal__title">Добавить задачу</h2>
     <hr>
-    
+
     <form class="form" id="add-task-form" action="#" method="post">
       <label class="form__label">
         <span class="form__text">Заголовок</span>
@@ -103,14 +102,14 @@
   </div>
 </div>
 
-<div id="edit-task-modal" class="modal hidden">
+<div class="modal hidden" id="edit-task-modal">
   <div class="modal__content">
-    <button type="button" class="close-button">
+    <button class="close-button" type="button">
       <span class="visually-hidden">Закрыть</span>
     </button>
     <h2 class="modal__title">Изменить задачу</h2>
     <hr>
-    
+
     <form class="form" id="edit-task-form" action="#" method="post">
       <label class="form__label">
         <span class="form__text">Заголовок</span>

@@ -6,7 +6,7 @@ fetch(url, {
   method: 'GET'
 })
   .then((res) => {
-    if(!res.ok) {
+    if (!res.ok) {
       throw new Error();
     }
     return res.json();
