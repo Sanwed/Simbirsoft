@@ -125,9 +125,6 @@ addTaskForm.addEventListener('submit', (evt) => {
   closeModal('add-task-modal');
 });
 
-/**
- * Добавляет возможность добавления и удаления задач
- */
 const tasks = (tasks) => {
   renderTasks(tasks);
   countTasks();
